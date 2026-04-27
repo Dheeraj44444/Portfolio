@@ -90,18 +90,21 @@ body {
 
 .timeline-content {
     flex: 1;
-    background-color: rgba(30, 30, 30, 0.7);
+    background: linear-gradient(140deg, rgba(22, 22, 22, 0.85), rgba(34, 34, 34, 0.55));
     padding: 1.5rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
     margin-left: 2rem;
     position: relative;
     border-left: 4px solid #64ffda;
-    transition: transform 0.3s ease;
+    border: 1px solid rgba(100, 255, 218, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .timeline-content:hover {
-    transform: translateY(-5px);
+    transform: translateY(-6px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.42);
+    border-color: rgba(100, 255, 218, 0.35);
 }
 
 .timeline-content::before {
@@ -118,13 +121,16 @@ body {
 }
 
 .timeline-content h3 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #fff;
+    line-height: 1.25;
+    margin-bottom: 0.25rem;
 }
 
 .timeline-content h4 {
     font-size: 1.2rem;
     color: #ccc;
+    margin-bottom: 0.9rem;
 }
 
 .timeline-content p {
@@ -138,8 +144,8 @@ body {
 }
 
 .responsibilities li {
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
+    margin-bottom: 0.62rem;
+    line-height: 1.62;
     position: relative;
 }
 
@@ -160,11 +166,12 @@ body {
 .tech-stack span, .highlights span {
     background-color: rgba(100, 255, 218, 0.1);
     color: #64ffda;
-    padding: 0.25rem 0.75rem;
+    padding: 0.32rem 0.8rem;
     border-radius: 20px;
     font-size: 0.9rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(100, 255, 218, 0.2);
+    transition: all 0.28s ease;
 }
 
 .tech-stack span:hover, .highlights span:hover {
@@ -173,6 +180,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .experience-container {
+        padding: 4rem 1rem 1rem;
+    }
+
     .timeline::before {
         left: 20px;
     }
@@ -196,9 +207,65 @@ body {
     
     .timeline-content {
         margin-left: 50px;
+        padding: 1.1rem;
     }
     
     .timeline-content::before {
         left: -36px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 1.15rem;
+    }
+
+    .experience-container h1 {
+        font-size: 2rem;
+        padding-top: 1.8rem;
+        padding-bottom: 1.8rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 1.6rem;
+    }
+
+    .timeline-date {
+        padding-left: 34px;
+        margin-bottom: 0.6rem;
+    }
+
+    .timeline-date span {
+        font-size: 0.82rem;
+        padding: 0.4rem 0.65rem;
+    }
+
+    .timeline-content {
+        margin-left: 34px;
+        padding: 0.95rem;
+        border-radius: 10px;
+    }
+
+    .timeline-content::before {
+        left: -29px;
+        width: 22px;
+        height: 22px;
+        border-width: 4px;
+    }
+
+    .timeline-content h3 {
+        font-size: 1.18rem;
+    }
+
+    .timeline-content h4 {
+        font-size: 0.98rem;
+    }
+
+    .responsibilities {
+        margin-left: 1rem;
+    }
+
+    .responsibilities li {
+        font-size: 0.92rem;
     }
 }

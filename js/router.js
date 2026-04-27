@@ -47,6 +47,7 @@ const router = {
   
       // If route is empty or "home", load the homepage content
       if (route === '' || route === 'home') {
+        contentArea.classList.add('home-view');
         contentArea.innerHTML = `
           <div class="welcome-text">
             <h1 class="hover-effect">Dheeraj N</h1>
@@ -54,11 +55,13 @@ const router = {
             <p class="hover-effect">
               Building intelligent systems, exploring AI, and crafting impactful solutions.
             </p>
-            <a href="/assets/Dheeraj Resume.pdf" class="resume-link hover-effect" target="_blank">Download Resume</a>
+            <a href="assets/resume.pdf" class="resume-link hover-effect" target="_blank">Download Resume</a>
           </div>
         `;
         return;
       }
+
+      contentArea.classList.remove('home-view');
   
       // Load page content from separate HTML file
       fetch(`pages/${route}.html`)
